@@ -1,13 +1,19 @@
-const eating = {
+const eat = {
   full: 100,
 };
 
-const fun = 50;
+const play = {
+  fun: 50,
+};
 
-const strength = 100;
+const strength = {
+  strength: 100,
+};
 
-const energy = 50;
+const energy = {
+  energy: 50,
+};
 
 export default {
-  eating, fun, strength, energy
+  eat, play, strength, energy
 };

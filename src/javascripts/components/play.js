@@ -1,53 +1,53 @@
-let fun = 50;
+import playing from '../data/data';
 
-const eatHealthy = () => {
-  if (fun < 100) {
-    fun += 5;
+const superFun = () => {
+  if (playing.play.fun <= 100) {
+    playing.play.fun += 50;
   }
-  if (fun >= 100) {
-    fun = 100;
+  if (playing.play.fun >= 100) {
+    playing.play.fun = 100;
   }
-  return fun;
+  return playing.play.fun;
 };
-const eatUnhealthy = () => {
-  if (fun < 100) {
-    fun -= 3;
+const slightlyFun = () => {
+  if (playing.play.fun <= 100) {
+    playing.play.fun += 2;
   }
-  if (fun >= 100) {
-    fun = 100;
+  if (playing.play.fun >= 100) {
+    playing.play.fun = 100;
   }
-  if (fun <= 0) {
-    fun = 0;
+  if (playing.play.fun <= 0) {
+    playing.play.fun = 0;
   }
-  return fun;
+  return playing.play.fun;
 };
 
-const eatButtons = () => {
-  $('#healthy').on('click', () => {
-    $('#eatScore').html('');
-    $('#eatScore').html(`<h2>${eatHealthy()}</h2>`);
+const playButtons = () => {
+  $('#superFun').on('click', () => {
+    $('#playScore').html('');
+    $('#playScore').html(`<h3>Your fun level is at ${superFun()}%</h3>`);
   });
-  $('#unhealthy').on('click', () => {
-    $('#eatScore').html('');
-    $('#eatScore').html(`<h2>${eatUnhealthy()}</h2>`);
+  $('#slightlyFun').on('click', () => {
+    $('#playScore').html('');
+    $('#playScore').html(`<h3>Your fun level is at ${slightlyFun()}%</h3>`);
   });
 };
 
-const eatDOM = () => {
+const playDOM = () => {
   const domstring = `<div>
   <div class="header">
-  <h1>Eat</h1>
+  <h1>Play</h1>
   </div>
-  <div id="eatScore">
-  <h2>${full}</h2>
+  <div id="playScore">
+  <h3>Your fun level is at ${playing.play.fun}%</h3>
   </div>
   <div class="button-group">
-  <button id="healthy">Healthy</button>
-  <button id="unhealthy">Unhealthy</button>
+  <button id="superFun">Super Fun</button>
+  <button id="slightlyFun">Slightly Fun</button>
   </div>
   </div>`;
-  $('#eat').html(domstring);
-  eatButtons();
+  $('#play').html(domstring);
+  playButtons();
 };
 
-export default { eatDOM, eatButtons };
+export default { playDOM };
