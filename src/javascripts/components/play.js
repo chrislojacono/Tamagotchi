@@ -1,22 +1,25 @@
-let full = 100;
+let fun = 50;
 
 const eatHealthy = () => {
-  if (full < 100) {
-    full += 5;
+  if (fun < 100) {
+    fun += 5;
   }
-  if (full >= 100) {
-    full = 100;
+  if (fun >= 100) {
+    fun = 100;
   }
-  return full;
+  return fun;
 };
 const eatUnhealthy = () => {
-  if (full <= 100) {
-    full -= 3;
+  if (fun < 100) {
+    fun -= 3;
   }
-  if (full > 100) {
-    full = 100;
+  if (fun >= 100) {
+    fun = 100;
   }
-  return full;
+  if (fun <= 0) {
+    fun = 0;
+  }
+  return fun;
 };
 
 const eatButtons = () => {
