@@ -1,8 +1,10 @@
 import food from '../data/data';
+import progress from './progress';
+import random from './random';
 
 const eatHealthy = () => {
   if (food.eat.full < 100) {
-    food.eat.full += 5;
+    food.eat.full += random.randomizer();
   }
   if (food.eat.full >= 100) {
     food.eat.full = 100;
@@ -12,7 +14,7 @@ const eatHealthy = () => {
 
 const eatUnhealthy = () => {
   if (food.eat.full <= 100) {
-    food.eat.full -= 3;
+    food.eat.full -= random.randomizer();
   }
   if (food.eat.full <= 0) {
     food.eat.full = 0;
@@ -23,11 +25,15 @@ const eatUnhealthy = () => {
 const eatButtons = () => {
   $('#healthy').on('click', () => {
     $('#eatScore').html('');
-    $('#eatScore').html(`<h3>You are ${eatHealthy()}% full</h3>`);
+    $('#eatScore').html(`<h5>Your stomach is ${eatHealthy()}% full</h5>`);
+    $('#progress-bar').html('');
+    $('#progress-bar').html(`<h3>Your overall health is at ${progress.progress()}%</h3>`);
   });
   $('#unhealthy').on('click', () => {
     $('#eatScore').html('');
-    $('#eatScore').html(`<h3>You are ${eatUnhealthy()}% full</h3>`);
+    $('#eatScore').html(`<h5>Your stomach is ${eatUnhealthy()}% full</h5>`);
+    $('#progress-bar').html('');
+    $('#progress-bar').html(`<h3>Your overall health is at ${progress.progress()}%</h3>`);
   });
 };
 
@@ -37,11 +43,11 @@ const eatDOM = () => {
   <h1>Eat</h1>
   </div>
   <div id="eatScore">
-  <h3>You are ${food.eat.full}% full</h3>
+  <h5>Your stomach is ${food.eat.full}% full</h5>
   </div>
   <div class="button-group">
-  <button id="healthy">Healthy</button>
-  <button id="unhealthy">Unhealthy</button>
+  <button id="healthy" class="buttonClick">Healthy</button>
+  <button id="unhealthy" class="buttonClick">Unhealthy</button>
   </div>
   </div>`;
   $('#eat').html(domstring);
