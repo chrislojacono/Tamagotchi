@@ -1,0 +1,14 @@
+#play{
+    background-color: $play;
+    @include boxShadow;
+    @include divSpace;
+    .buttonClick{
+        @include button(black)
+     }
+     .buttonClick:hover{
+         @include hover($play-secondary);
+     }
+     h1{
+        @include header(black);
+    }
+}

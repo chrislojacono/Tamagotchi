@@ -1,9 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
+@import './globals/';
+
+@import './components';
+
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: #f050ae;
   text-align: center;
-  margin-top: 100px;
+  font-family: 'Signika', sans-serif;
+  
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,0 +1,21 @@
+#app{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#eat{
+   background-color: $eat;
+   @include boxShadow;
+   @include divSpace;
+   
+   .buttonClick{
+       @include button(black)
+    }
+    .buttonClick:hover{
+        @include hover($eat-secondary);
+    }
+    h1{
+        @include header(black);
+    }
+}

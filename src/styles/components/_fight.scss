@@ -1,0 +1,14 @@
+#fight{
+    background-color: $fight;
+    @include boxShadow;
+    @include divSpace;
+    .buttonClick{
+        @include button(black)
+     }
+     .buttonClick:hover{
+         @include hover($fight-secondary);
+     }
+     h1{
+        @include header(black);
+    }
+}
