@@ -37,7 +37,7 @@ The user is able to feed, fight, play and put the tamagotchi to sleep. The overa
 ```
 
 ## Creator 
-Chris LoJacono[https://github.com/chrislojacono]
+Chris LoJacono(https://github.com/chrislojacono)
 
 ## Website Deploy
 https://tamagotchicl.netlify.app/
