@@ -1,24 +1,24 @@
-import fight from '../data/data';
+import data from '../data/data';
 import progress from './progress';
 import random from './random';
 
 const runAway = () => {
-  if (fight.strength.strength <= 100) {
-    fight.strength.strength += random.randomizer();
+  if (data.dataStore.strength <= 100) {
+    data.dataStore.strength += random.randomizer();
   }
-  if (fight.strength.strength >= 100) {
-    fight.strength.strength = 100;
+  if (data.dataStore.strength >= 100) {
+    data.dataStore.strength = 100;
   }
-  return fight.strength.strength;
+  return data.dataStore.strength;
 };
 const violence = () => {
-  if (fight.strength.strength <= 100) {
-    fight.strength.strength -= random.randomizer();
+  if (data.dataStore.strength <= 100) {
+    data.dataStore.strength -= random.randomizer();
   }
-  if (fight.strength.strength <= 0) {
-    fight.strength.strength = 0;
+  if (data.dataStore.strength <= 0) {
+    data.dataStore.strength = 0;
   }
-  return fight.strength.strength;
+  return data.dataStore.strength;
 };
 
 const fightButtons = () => {
@@ -42,7 +42,7 @@ const fightDOM = () => {
   <h1>Fight</h1>
   </div>
   <div id="strength">
-  <h5>Your strength is at ${fight.strength.strength}%</h5>
+  <h5>Your strength is at ${data.dataStore.strength}%</h5>
   </div>
   <div class="button-group">
   <button id="runAway" class="buttonClick bouncy">Run Away!!</button>

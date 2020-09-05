@@ -1,27 +1,27 @@
-import playing from '../data/data';
+import data from '../data/data';
 import progress from './progress';
 import random from './random';
 
 const superFun = () => {
-  if (playing.play.fun <= 100) {
-    playing.play.fun += random.randomizer();
+  if (data.dataStore.fun <= 100) {
+    data.dataStore.fun += random.randomizer();
   }
-  if (playing.play.fun >= 100) {
-    playing.play.fun = 100;
+  if (data.dataStore.fun >= 100) {
+    data.dataStore.fun = 100;
   }
-  return playing.play.fun;
+  return data.dataStore.fun;
 };
 const slightlyFun = () => {
-  if (playing.play.fun <= 100) {
-    playing.play.fun += random.randomizer();
+  if (data.dataStore.fun <= 100) {
+    data.dataStore.fun += random.randomizer();
   }
-  if (playing.play.fun >= 100) {
-    playing.play.fun = 100;
+  if (data.dataStore.fun >= 100) {
+    data.dataStore.fun = 100;
   }
-  if (playing.play.fun <= 0) {
-    playing.play.fun = 0;
+  if (data.dataStore.fun <= 0) {
+    data.dataStore.fun = 0;
   }
-  return playing.play.fun;
+  return data.dataStore.fun;
 };
 
 const playButtons = () => {
@@ -45,7 +45,7 @@ const playDOM = () => {
   <h1>Play</h1>
   </div>
   <div id="playScore">
-  <h5>Your fun level is at ${playing.play.fun}%</h5>
+  <h5>Your fun level is at ${data.dataStore.fun}%</h5>
   </div>
   <div class="button-group">
   <button id="superFun" class="buttonClick bouncy">Super Fun</button>
