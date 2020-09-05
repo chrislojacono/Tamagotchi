@@ -1,24 +1,24 @@
-import sleep from '../data/data';
+import data from '../data/data';
 import progress from './progress';
 import random from './random';
 
 const napTime = () => {
-  if (sleep.energy.energy <= 100) {
-    sleep.energy.energy += random.randomizer();
+  if (data.dataStore.energy <= 100) {
+    data.dataStore.energy += random.randomizer();
   }
-  if (sleep.energy.energy >= 100) {
-    sleep.energy.energy = 100;
+  if (data.dataStore.energy >= 100) {
+    data.dataStore.energy = 100;
   }
-  return sleep.energy.energy;
+  return data.dataStore.energy;
 };
 const deepSlumber = () => {
-  if (sleep.energy.energy <= 100) {
-    sleep.energy.energy += random.randomizer();
+  if (data.dataStore.energy <= 100) {
+    data.dataStore.energy += random.randomizer();
   }
-  if (sleep.energy.energy >= 100) {
-    sleep.energy.energy = 100;
+  if (data.dataStore.energy >= 100) {
+    data.dataStore.energy = 100;
   }
-  return sleep.energy.energy;
+  return data.dataStore.energy;
 };
 
 const fightButtons = () => {
@@ -42,7 +42,7 @@ const sleepDOM = () => {
   <h1>Sleep</h1>
   </div>
   <div id="energy">
-  <h5>Your energy is at ${sleep.energy.energy}%</h5>
+  <h5>Your energy is at ${data.dataStore.energy}%</h5>
   </div>
   <div class="button-group">
   <button id="napTime" class="buttonClick bouncy">Nap Time</button>

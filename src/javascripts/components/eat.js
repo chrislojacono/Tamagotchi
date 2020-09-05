@@ -1,25 +1,25 @@
-import food from '../data/data';
+import data from '../data/data';
 import progress from './progress';
 import random from './random';
 
 const eatHealthy = () => {
-  if (food.eat.full < 100) {
-    food.eat.full += random.randomizer();
+  if (data.dataStore.full < 100) {
+    data.dataStore.full += random.randomizer();
   }
-  if (food.eat.full >= 100) {
-    food.eat.full = 100;
+  if (data.dataStore.full >= 100) {
+    data.dataStore.full = 100;
   }
-  return food.eat.full;
+  return data.dataStore.full;
 };
 
 const eatUnhealthy = () => {
-  if (food.eat.full <= 100) {
-    food.eat.full -= random.randomizer();
+  if (data.dataStore.full <= 100) {
+    data.dataStore.full -= random.randomizer();
   }
-  if (food.eat.full <= 0) {
-    food.eat.full = 0;
+  if (data.dataStore.full <= 0) {
+    data.dataStore.full = 0;
   }
-  return food.eat.full;
+  return data.dataStore.full;
 };
 
 const eatButtons = () => {
@@ -43,7 +43,7 @@ const eatDOM = () => {
   <h1>Eat</h1>
   </div>
   <div id="eatScore">
-  <h5>Your stomach is ${food.eat.full}% full</h5>
+  <h5>Your stomach is ${data.dataStore.full}% full</h5>
   </div>
   <div class="button-group">
   <button id="healthy" class="buttonClick">Healthy</button>

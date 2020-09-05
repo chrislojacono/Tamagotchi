@@ -2,10 +2,10 @@ import data from '../data/data';
 
 const progress = () => {
   let progressBar = 0;
-  progressBar += Number(data.energy.energy);
-  progressBar += Number(data.play.fun);
-  progressBar += Number(data.eat.full);
-  progressBar += Number(data.strength.strength);
+  progressBar += Number(data.dataStore.energy);
+  progressBar += Number(data.dataStore.fun);
+  progressBar += Number(data.dataStore.full);
+  progressBar += Number(data.dataStore.strength);
   const newValue = Number(progressBar) / 4;
   return newValue;
 };
